@@ -12,7 +12,6 @@
     "devDependencies": {
         "@babel/core": "7",
         "@babel/preset-react": "^7.13.13",
-        "@faker-js/faker": "^7.6.0",
         "@popperjs/core": "^2.11.6",
         "axios": "^0.21",
         "jquery": "^3.6",
