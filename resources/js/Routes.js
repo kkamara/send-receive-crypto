@@ -4,7 +4,7 @@ import { Routes, Route, } from 'react-router-dom'
 import PrivateRoute from './PrivateRoute'
 import { Guard } from './Guard'
 
-import Header from './components/layouts/Header'
+import Header from './components/layouts/Navbar'
 
 import Home from "./components/pages/HomeComponent"
 

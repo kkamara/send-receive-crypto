@@ -5,7 +5,7 @@ import Routes from "./Routes"
 function App() {
   return (
    <BrowserRouter>
-      <div className="App">
+      <div className="App container">
         <Routes/>
       </div>
    </BrowserRouter>
