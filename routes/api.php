@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExchangeRateController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\ExchangeRateController;
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    /**
+     * Wrap api requests in here to authenticate from the frontend.
+     * https://laravel.com/docs/9.x/sanctum#protecting-spa-routes
+     */
+    Route::get('/exchange', [ExchangeRateController::class, 'index']);
+    Route::prefix('user')->group(function () {
+        Route::get('/login', [LoginController::class, 'create'])
+            ->name('login');
+    });
 });
 
-Route::get('/exchange', [ExchangeRateController::class, 'index']);
