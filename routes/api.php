@@ -21,7 +21,11 @@ Route::middleware('auth:sanctum')->group(function () {
      * Wrap api requests in here to authenticate from the frontend.
      * https://laravel.com/docs/9.x/sanctum#protecting-spa-routes
      */
-    Route::get('/exchange', [ExchangeRateController::class, 'index']);
+    Route::prefix('exchange')->group(function () {
+        Route::get('/', [ExchangeRateController::class, 'index']);
+        Route::get('/basecharacters', [ExchangeRateController::class, 'getBaseCharacters']);
+        Route::get('/symbols', [ExchangeRateController::class, 'getSymbols']);
+    });
     Route::prefix('user')->group(function () {
         Route::get('/login', [LoginController::class, 'create'])
             ->name('login');

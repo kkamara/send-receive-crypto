@@ -39,4 +39,22 @@ class ExchangeRateController extends Controller
             $cleanInput
         ));
     }
+
+    /**
+     * Get base characters like USD, EUR, EGP.
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getBaseCharacters() {
+        $result = explode(', ', getBaseCharacters());
+        return response()->json(['data' => $result,]);
+    }
+
+    /**
+     * Get symbols like BTC, ETH.
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getSymbols() {
+        $result = explode(', ', getSymbols());
+        return response()->json(['data' => $result,]);
+    }
 }
