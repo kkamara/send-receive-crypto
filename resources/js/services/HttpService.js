@@ -4,16 +4,15 @@ axios.defaults.withCredentials = true
 
 export default class HttpService
 {
-    // _domain = 'http://localhost:80'
-    _domain = "http://lrb-app.herokuapp.com"
-    _url = `${this._domain}/web`
+    _domain = 'http://localhost:8000'
+    _api = `${this._domain}/api`
 
     get domain() {
         return this._domain
     }
 
-    get url() {
-        return this._url
+    get api() {
+        return this._api
     }
 
     postData = (path, item, tokenId="") => {

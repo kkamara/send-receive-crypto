@@ -46,13 +46,13 @@ export default function Navbar(props) {
               <a className="nav-link" href="#">Price</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" tabindex="-1">App</a>
+              <a className="nav-link" href="#" tabIndex="-1">App</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" tabindex="-1">Dashboard</a>
+              <a className="nav-link" href="#" tabIndex="-1">Dashboard</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" tabindex="-1">Sign in</a>
+              <a className="nav-link" href="#" tabIndex="-1">Sign in</a>
             </li>
           </ul>
         </div>
